@@ -54,7 +54,7 @@ def callback():
         userinfo = keycloak_openid.userinfo(token['access_token'])
         session['userinfo'] = userinfo
         
-        return redirect(url_for('index'))
+        return redirect(url_for('protected'))
     except Exception as e:
         return f'Authentication failed: {str(e)}', 401
 
